@@ -1,0 +1,19 @@
+{
+  "name": "js-adv",
+  "version": "1.0.0",
+  "description": "Trying out and practicing java script",
+  "main": "index.js",
+  "scripts": {
+    "start": "serve",
+    "test": "start-server-and-test start http://localhost:3000 cy:open",
+    "cy:open": "cypress open"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.3",
+    "serve": "^14.2.1",
+    "start-server-and-test": "^2.0.3"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
