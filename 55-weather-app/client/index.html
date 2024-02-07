@@ -11,40 +11,45 @@
 <body class="blurred">
   <header class="header">
     <div class="header-left">
-      <img class="weather-icon large" src="http://openweathermap.org/img/wn/10d@2x.png">
+      <img class="weather-icon large" data-current-icon src="http://openweathermap.org/img/wn/10d@2x.png">
       <div class="header-left-details">
-        <div class="header-current-temp">21&deg;</div>
-        <div class="header-current-description">Sunny</div>
+        <div class="header-current-temp">
+          <span data-current-temp>21</span>&deg;
+        </div>
+        <div class="header-current-description" data-current-description>Sunny</div>
       </div>
     </div>
     <div class="header-right">
       <div class="info-group">
         <div class="label">High</div>
-        <div>23&deg;</div>
+        <div><span data-current-high>23</span>&deg;</div>
       </div>
       <div class="info-group">
         <div class="label">FL High</div>
-        <div>26&deg;</div>
+        <div><span data-current-fl-high>26</span>&deg;</div>
       </div>
       <div class="info-group">
         <div class="label">Wind</div>
-        <div>12<span class="value-sub-info">mph</span></div>
+        <div>
+          <span data-current-wind>12</span>
+          <span class="value-sub-info">mph</span>
+        </div>
       </div>
       <div class="info-group">
         <div class="label">LOW</div>
-        <div>12&deg;</div>
+        <div><span data-current-low>12</span>&deg;</div>
       </div>
       <div class="info-group">
         <div class="label">FL Low</div>
-        <div>13&deg;</div>
+        <div><span data-current-fl-low>13</span>&deg;</div>
       </div>
       <div class="info-group">
         <div class="label">Precip</div>
-        <div>14%</div>
+        <div><span data-current-precipitation>14</span>%</div>
       </div>
     </div>
   </header>
-  <section class="day-section">
+  <section class="day-section" data-day-section>
     <div class="day-card">
       <img class="weather-icon" src="http://openweathermap.org/img/wn/10d.png">
       <div class="day-card-date">Monday</div>
@@ -81,7 +86,7 @@
       <div>23&deg;</div>
     </div>
   </section>
-  <table class="hour-section">
+  <table class="hour-section" data-hour-section>
     <tbody>
       <tr class="hour-row">
         <td>
@@ -365,5 +370,51 @@
       </tr>
     </tbody>
   </table>
+
+  <template id="day-card-template">
+    <div class="day-card">
+      <img class="weather-icon" data-day-icon src="http://openweathermap.org/img/wn/10d.png">
+      <div class="day-card-date" data-day-name>Monday</div>
+      <div><span data-day-temp>23</span>&deg;</div>
+    </div>
+  </template>
+
+  <template id="hour-row-template">
+    <tr class="hour-row">
+      <td>
+        <div class="info-group">
+          <div class="label" data-hour-name>Sunday</div>
+          <div data-hour-time>6AM</div>
+        </div>
+      </td>
+      <td>
+        <img class="weather-icon" data-hour-icon src="http://openweathermap.org/img/wn/10d.png" />
+      </td>
+      <td>
+        <div class="info-group">
+          <div class="label">TEMP</div>
+          <div><span data-hour-temp>22</span>&deg;</div>
+        </div>
+      </td>
+      <td>
+        <div class="info-group">
+          <div class="label">FL TEMP</div>
+          <div><span data-hour-fl-temp>24</span>&deg;</div>
+        </div>
+      </td>
+      <td>
+        <div class="info-group">
+          <div class="label">WIND</div>
+          <div><span data-hour-wind>12</span><span class="value-sub-info">mph</span></div>
+        </div>
+      </td>
+      <td>
+        <div class="info-group">
+          <div class="label">PRECIP</div>
+          <div><span data-hour-precipitation>10</span>%</div>
+        </div>
+      </td>
+    </tr>
+  </template>
 </body>
 </html>
